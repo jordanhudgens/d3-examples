@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>D3 Intro</title>
+  <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+
+  <style>
+    .app div {
+      font: 10px sans-serif;
+      background-color: aquamarine;
+      text-align: right;
+      padding: 3px;
+      margin: 1px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Example from https://scrimba.com/g/gd3js -->
+  <div class="app"></div>
+</body>
+
+<script>
+  var data = [30, 86, 168, 281, 303, 365];
+
+  d3.select(".app")
+    .selectAll("div")
+    .data(data)
+    .enter()
+    .append("div")
+    .style("width", function (d) { return d * 2 + "px"; })
+    .style("color", function (d) { return "black"; })
+    .text(function (d) { return '$ ' + d; });
+
+</script>
+
+</html>
